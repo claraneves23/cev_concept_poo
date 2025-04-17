@@ -159,14 +159,6 @@ FimClasse
 - **Classe Final:** não pode ser herdada.
 - **Método Final:** não pode ser sobrescrito.
 
-## 🧩 Relacionamento Entre Classes
 
-### Exemplo:
-
-```plaintext
-Classe: Lutador
-- nome, idade, peso, etc.
-+ apresentar(), ganharLuta(), perderLuta()
-```
 
 
