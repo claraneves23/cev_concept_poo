@@ -1,11 +1,11 @@
-package aula02;
+package aula03;
 
 public class Caneta {
-    String modelo;
-    String cor;
-    float ponta;
-    int carga;
-    boolean tampada;
+    public String modelo;
+    public String cor;
+    private float ponta;
+    protected int carga;
+    protected boolean tampada;
 
     public void status() {
         System.out.println("Modelo:\t" + this.modelo);
@@ -22,14 +22,14 @@ public class Caneta {
             System.out.println("Rabisco");
     }
 
-    public void tampar() {
+    protected void tampar() {
         if (this.tampada == false) {
             this.tampada = true;
 
         }
     }
 
-    public void destampar() {
+    protected void destampar() {
         if (this.tampada == true) {
             this.tampada = false;
 
