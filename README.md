@@ -160,5 +160,41 @@ FimClasse
 - **Método Final:** não pode ser sobrescrito.
 
 
+## 🐙 Polimorfismo
 
+```mermaid
+classDiagram
+    %% ---------- Classe Abstrata ----------
+    class Animal {
+        -peso
+        -idade
+        -membros
+        <<abstract>>
+        +locomover()
+        +alimentar()
+        +emitirSom()
+    }
+
+    %% ---------- Subclasses ----------
+    class Mamifero {
+        -corPelo
+    }
+    class Reptil {
+        -corEscama
+    }
+    class Peixe {
+        -corEscama
+        +soltarBolha()
+    }
+    class Ave {
+        -corPena
+        +fazerNinho()
+    }
+
+    %% ---------- Relações ----------
+    Animal <|-- Mamifero
+    Animal <|-- Reptil
+    Animal <|-- Peixe
+    Animal <|-- Ave
+```
 
