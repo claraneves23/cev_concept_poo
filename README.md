@@ -333,7 +333,6 @@ publico método calcMedia(v1: Real, v2: Real): Inteiro
 
 ### Tipos de Polimorfismo
 - Sobreposição: acontece quando **substituímos** um método de uma superclasse, usando a **mesma assinatura.**
-- Sobrecarga
 
 ```mermaid
 classDiagram
@@ -570,5 +569,65 @@ k.locomover() // Correndo
 k.alimentar() // Mamando
 k.emitirSom() // Som de Mamífero
 k.abanarRabo()
+
+```
+- Sobrecarga: assinaturas diferentes, mesma classe.
+
+```
+classe Cachorro estende lobo
+	publico método reagir(frase: Caractere)
+		se (frase="toma comida" ou frase="Olá")
+			escreva("Abanar e Latir")
+		senão
+			escreva("Rosnar")
+		fimSe
+	fimMetodo
+	publico método reagir(hora, min: Inteiro)
+		se(hora<12)
+			escreva("Abanar")
+		senaoSe (hora>=18)
+			escreva("Ignorar")
+		senão
+			escreva("Abanar e Latir")
+		fimSe
+
+	fimMetodo
+	publico método reagir(dono: Logico)
+		se(dono = verdadeiro)
+			escreva("Abanar")
+		senão
+			escreva("Rosnar e Latir")
+		fimSe
+	fimMetodo
+	publico método reagir(idade: Inteiro, pessoa: Real)
+		se(idade<5)
+			se(peso<10)
+				escreva("Abanar")
+			senão
+				escreva("Latir")
+			fimSe
+		senão
+			se(peso<10)
+				escreva("Rosnar")
+			senão
+				escreva("Ignorar")
+			fimSe
+		fimSe
+	fimMetodo
+FimClasse
+
+
+//Programa Principal 
+
+c = novo Cachorro()
+
+c.reagir("Olá")
+c.reagir("Agora não")
+c.reagir(11, 45)
+c.reagir(21, 00)
+c.reagir(verdadeiro)
+c.reagir(falso)
+c.reagir(2, 12.5)
+c.reagir(17, 4.5)
 
 ```
