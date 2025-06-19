@@ -657,12 +657,32 @@ System.out.println(mensagem);
 
 - Casting (explícito)
 ```java
-int classificacao = (int) (media /2) ;
-System.out.println(classificacao);
+	int classificacao = (int) (media /2) ;
+	System.out.println(classificacao);
 ```
 
 - Casting (implícito)
   ```java
-int x = 10;
-double y = x; // casting implícito
+	int x = 10;
+	double y = x; // casting implícito
+  ```
+
+  - Scanner
+  ```java
+  public class ExemploScanner {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite seu nome: ");
+        String nome = scanner.nextLine();
+        System.out.print("Digite sua idade: ");
+        int idade = scanner.nextInt();
+        System.out.print("Digite o valor que pretende investir esse mês: ");
+        double valor = scanner.nextDouble();
+
+        System.out.println(nome + " que tem " + idade + " anos, irá investir R$ " + valor + " esse mês.");
+
+        scanner.close();
+    }
+}
   ```
