@@ -635,14 +635,14 @@ c.reagir(17, 4.5)
 ### Anotações extras
 
 - Método Format
-```
+```java
 String nome = "Maria";
 int idade = 30;
 double valor = 55.9999;
 System.out.println(String.format("Meu nome é %s, eu tenho %d anos e hoje gastei %.2f reais", nome, idade, valor));
 ```
 
-```
+```java
 String nome = "João";
 int aulas = 4;
 
@@ -654,3 +654,15 @@ String mensagem = """
 
 System.out.println(mensagem);
 ```
+
+- Casting (explícito)
+```java
+int classificacao = (int) (media /2) ;
+System.out.println(classificacao);
+```
+
+- Casting (implícito)
+  ```java
+int x = 10;
+double y = x; // casting implícito
+  ```
