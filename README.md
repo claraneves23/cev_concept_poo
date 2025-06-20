@@ -738,5 +738,19 @@ Filme: Matrix (1999)
 
 ---
 
+- forEach
+
+```java
+ArrayList<String> nomes = new ArrayList<>();
+nomes.add("Jacqueline");
+nomes.add("Paulo");
+nomes.add("Suellen");
+nomes.add("Emily");
+
+for (String nome : nomes) {
+    System.out.println(nome);
+}
+```
+
 
 
