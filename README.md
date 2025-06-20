@@ -752,5 +752,7 @@ for (String nome : nomes) {
 }
 ```
 
-
+```java
+nomes.forEach(nome -> System.out.println(nome));
+```
 
