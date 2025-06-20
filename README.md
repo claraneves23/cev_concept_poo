@@ -756,3 +756,7 @@ for (String nome : nomes) {
 nomes.forEach(nome -> System.out.println(nome));
 ```
 
+```java
+nomes.forEach(System.out::println);
+```
+
