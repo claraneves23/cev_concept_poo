@@ -667,7 +667,7 @@ System.out.println(mensagem);
 	double y = x; // casting implícito
   ```
 
-  - Scanner
+  * Scanner
   ```java
   public class ExemploScanner {
     public static void main(String[] args) {
@@ -680,9 +680,63 @@ System.out.println(mensagem);
         System.out.print("Digite o valor que pretende investir esse mês: ");
         double valor = scanner.nextDouble();
 
-        System.out.println(nome + " que tem " + idade + " anos, irá investir R$ " + valor + " esse mês.");
+        System.out.println(nome + " que tem " + idade + " anos, irá investir R$ "+ valor + " esse mês.");
 
         scanner.close();
     }
 }
-  ```
+```
+
+
+### ✅ O que é o método `toString()`?
+
+O método `toString()` é usado para **representar um objeto como texto**. Ele é definido na classe `Object` (a superclasse de todas as classes em Java), e por padrão retorna algo como:
+
+```
+NomeDaClasse@códigoHexadecimal
+```
+
+---
+
+### 🔧 Por que sobrescrever?
+
+Ao sobrescrever o método `toString()`, você pode **exibir informações úteis** sobre o objeto, como atributos, ao invés de um código confuso.
+
+---
+
+### 🧩 Exemplo prático:
+
+```java
+public class Filme {
+    private String nome;
+    private int ano;
+
+    public Filme(String nome, int ano) {
+        this.nome = nome;
+        this.ano = ano;
+    }
+
+    @Override
+    public String toString() {
+        return "Filme: " + nome + " (" + ano + ")";
+    }
+}
+```
+
+Uso:
+
+```java
+Filme filme = new Filme("Matrix", 1999);
+System.out.println(filme);
+```
+
+🔸 **Saída:**
+
+```
+Filme: Matrix (1999)
+```
+
+---
+
+
+
