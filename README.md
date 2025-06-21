@@ -762,6 +762,101 @@ nomes.forEach(System.out::println);
 
 ---
 
+### 🧠 O que é a interface Comparable?
+Comparable é uma interface usada para definir uma ordem natural de objetos.
+
+Ela serve para dizer: "Como essa classe sabe se um objeto é maior, menor ou igual a outro objeto da mesma classe?"
+
+Com isso, você pode usar diretamente métodos como Collections.sort(lista) ou lista.sort(...) sem precisar criar um comparador externo.
+
+#### 🧪 Como usar a interface Comparable em uma classe
+Vamos supor que você tenha uma classe chamada Pessoa com nome e idade, e você quer ordenar uma lista de pessoas pela idade.
+
+- Passo a passo:
+A classe implementa Comparable<T>, onde T é o nome da própria classe.
+
+Você implementa o método compareTo(), que define como comparar dois objetos.
+
+💻 Exemplo completo:
+```
+import java.util.*;
+
+public class Pessoa implements Comparable<Pessoa> {
+    private String nome;
+    private int idade;
+
+    public Pessoa(String nome, int idade) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    // Implementação do método compareTo
+    @Override
+    public int compareTo(Pessoa outra) {
+        // Ordena por idade (ordem crescente)
+        return Integer.compare(this.idade, outra.idade);
+    }
+
+    @Override
+    public String toString() {
+        return nome + " (" + idade + " anos)";
+    }
+
+    // Classe principal para testar
+    public static void main(String[] args) {
+        List<Pessoa> pessoas = new ArrayList<>();
+        pessoas.add(new Pessoa("Clara", 22));
+        pessoas.add(new Pessoa("João", 19));
+        pessoas.add(new Pessoa("Marina", 25));
+
+        System.out.println("Antes da ordenação:");
+        for (Pessoa p : pessoas) {
+            System.out.println(p);
+        }
+
+        // Ordena com base no compareTo (idade)
+        Collections.sort(pessoas);
+
+        System.out.println("\nDepois da ordenação por idade:");
+        for (Pessoa p : pessoas) {
+            System.out.println(p);
+        }
+    }
+}
+```
+#### 📊 O que faz o compareTo()?
+
+```
+public int compareTo(Pessoa outra) {
+    return Integer.compare(this.idade, outra.idade);
+}
+
+```
+Isso compara a idade da pessoa atual (this) com a idade da outra pessoa (outra):
+
+- Retorna negativo → this é menor que outra
+
+- Retorna zero → são iguais
+
+- Retorna positivo → this é maior que outra
+
+#### ✅ Quando usar Comparable?
+Use Comparable quando:
+
+- Você quer definir uma ordem "padrão" para objetos da sua classe.
+
+- Vai usar Collections.sort(lista) ou lista.sort(null).
+
+Se quiser ordenar de vários jeitos diferentes, aí é melhor usar a interface Comparator.
+
 ### 🧠 O que é o Comparator?
 O Comparator é uma interface funcional do Java usada para dizer como dois objetos devem ser comparados. Ele é muito usado quando você quer ordenar uma lista de um jeito específico, por exemplo:
 
