@@ -760,3 +760,47 @@ nomes.forEach(nome -> System.out.println(nome));
 nomes.forEach(System.out::println);
 ```
 
+---
+
+### Listas em Java: Principais Classes
+
+No Java, existem várias classes para representar listas de elementos, cada uma com características específicas:
+
+#### **ArrayList**
+
+O `ArrayList` é baseado em um **array dinâmico**. Ele ajusta automaticamente seu tamanho ao adicionar ou remover elementos. É muito usado por ser simples e eficiente, especialmente quando se precisa acessar elementos rapidamente por índice.
+
+#### **LinkedList**
+
+O `LinkedList` é uma **lista encadeada**, onde cada elemento aponta para o próximo. Ele permite **inserções e remoções eficientes** em qualquer posição da lista, mas é **menos eficiente para buscas** diretas, já que não usa índices como o `ArrayList`.
+
+
+#### 🔹 **Vector**
+
+A classe `Vector` é parecida com o `ArrayList` porque também usa um **array dinâmico** para armazenar os elementos. A grande diferença entre eles é que o `Vector` é **sincronizado**, enquanto o `ArrayList` não é.
+
+##### ✅ **O que significa sincronizado?**
+
+Em programação, **sincronização** significa que **apenas uma thread pode acessar o `Vector` por vez** quando está lendo ou alterando os dados. Isso evita **problemas de concorrência**, como duas threads tentando adicionar ou remover elementos ao mesmo tempo, o que poderia corromper os dados.
+
+###### 🧵 O que são *threads*?
+
+Threads são como "tarefas paralelas" que um programa pode executar ao mesmo tempo. Por exemplo, em um app, uma thread pode estar baixando dados da internet enquanto outra atualiza a interface gráfica. Se duas threads acessam a mesma lista ao mesmo tempo **sem sincronização**, pode haver conflitos ou erros (como tentar ler um valor que ainda está sendo modificado).
+
+##### 🛡️ Como o `Vector` resolve isso?
+
+O `Vector` usa **métodos sincronizados**, ou seja, **ele trava o acesso à lista quando uma thread está usando**, e só libera quando terminar. Isso **garante segurança** em ambientes com várias threads, mas também **deixa o acesso mais lento**, porque outras threads precisam esperar.
+
+##### ⚖️ Quando usar `Vector`?
+
+* Quando **várias threads vão acessar/modificar** a mesma lista ao mesmo tempo.
+* Se você **não precisa de múltiplas threads**, o `ArrayList` é mais rápido e recomendado.
+
+---
+
+#### **Stack**
+
+A classe `Stack` implementa a estrutura de **pilha**, que segue o princípio **LIFO** ("last-in, first-out"). Ou seja, o último elemento adicionado é o primeiro a ser removido. É útil em algoritmos como análise de expressões, chamadas de função e navegação entre páginas.
+
+---
+
