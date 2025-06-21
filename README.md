@@ -804,3 +804,58 @@ A classe `Stack` implementa a estrutura de **pilha**, que segue o princípio **L
 
 ---
 
+### ✅ **O que é o `Map`?**
+
+O `Map` é **um tipo genérico (interface)** no Java. Ele **define como deve ser uma estrutura que guarda pares de chave e valor**, mas **não diz como isso será feito na prática**.
+
+Você pode pensar no `Map` como uma **ideia ou modelo**. Ele diz:
+
+> "Você deve permitir associar chaves a valores, buscar um valor por uma chave, remover pares, etc."
+
+Mas **ele não funciona sozinho** — alguém precisa implementar esse modelo.
+
+---
+
+### ✅ **O que é o `HashMap`?**
+
+O `HashMap` é **uma classe concreta** que **implementa o modelo do `Map`**. Ou seja, o `HashMap` **usa a ideia do Map e coloca isso para funcionar de verdade**.
+
+Ele guarda os pares de chave e valor em uma estrutura interna chamada **tabela hash**, que permite **acessos muito rápidos**.
+
+---
+
+### 🧠 **Fazendo uma analogia simples:**
+
+Imagine que o `Map` é **um contrato para fazer uma estante com gavetas nomeadas** (cada gaveta tem um nome = chave, e guarda algo dentro = valor).
+
+* O `Map` só define como essa estante deve funcionar: "cada gaveta deve ter um nome, você pode colocar coisas, tirar coisas, ver o que tem..."
+* O `HashMap` é **uma versão concreta** dessa estante, construída usando um sistema chamado **tabela hash** que organiza tudo de forma super rápida.
+
+---
+
+### ⚖️ **Resumo da diferença:**
+
+| `Map`                                                                              | `HashMap`                                      |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------- |
+| É uma **interface** (modelo)                                                       | É uma **classe** (implementação real)          |
+| Define o que um mapa deve fazer                                                    | Implementa o que o Map faz, usando tabela hash |
+| Não pode ser usado diretamente                                                     | Pode ser usado para criar objetos de verdade   |
+| Existem várias implementações de `Map`, como `HashMap`, `TreeMap`, `LinkedHashMap` | `HashMap` é a mais usada, rápida e prática     |
+
+---
+
+### 💻 Exemplo:
+
+```java
+// Usando a interface Map com a classe HashMap
+Map<String, Integer> mapa = new HashMap<>();
+
+mapa.put("Maçã", 10);
+mapa.put("Banana", 5);
+
+// Aqui estamos usando a ideia de Map, mas com a funcionalidade do HashMap
+System.out.println(mapa.get("Maçã")); // Saída: 10
+```
+---
+
+
