@@ -974,4 +974,23 @@ System.out.println(mapa.get("Maçã")); // Saída: 10
 ```
 ---
 
+### Conexão com API (exemplo
 
+```java
+Scanner sc = new Scanner(System.in);
+        System.out.println("O que você deseja assistir? ");
+        var busca = sc.nextLine();
+
+        String endereco = "https://www.omdbapi.com/?t=" + busca + "&apikey=xxxxx";
+
+
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(endereco))
+                .build();
+
+        HttpResponse<String> response = client
+                .send(request, HttpResponse.BodyHandlers.ofString());
+        System.out.println(response.body());
+
+```
