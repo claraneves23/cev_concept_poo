@@ -762,6 +762,27 @@ nomes.forEach(System.out::println);
 
 ---
 
+### 🧠 O que é o Comparator?
+O Comparator é uma interface funcional do Java usada para dizer como dois objetos devem ser comparados. Ele é muito usado quando você quer ordenar uma lista de um jeito específico, por exemplo:
+
+- Por ordem alfabética
+
+- Por idade
+
+- Por tamanho
+
+- Por número (crescente ou decrescente)
+
+### 🔧 O que é o Comparator.comparing()?
+O método Comparator.comparing() é uma forma prática e moderna (desde o Java 8) de criar um comparador automaticamente a partir de algum atributo do objeto.
+
+Exemplo:
+
+```
+Comparator.comparing(Pessoa::getIdade)
+```
+Isso cria um comparador que ordena pessoas pela idade.
+
 ### Listas em Java: Principais Classes
 
 No Java, existem várias classes para representar listas de elementos, cada uma com características específicas:
