@@ -1111,4 +1111,49 @@ A classe `File` oferece métodos para manipular arquivos e diretórios:
 
 ---
 
+Claro! Aqui está um **resumo em Markdown** do texto sobre a classe `Scanner`:
+
+---
+
+### 📘 Resumo: Classe `Scanner` para Leitura de Arquivos
+
+A classe `Scanner` do Java pode ser usada para **ler dados de várias fontes**, como arquivos, teclado e strings.
+
+#### 📂 Leitura de Arquivos
+
+Para ler um arquivo:
+
+1. Crie um objeto `File` com o caminho do arquivo.
+2. Passe esse objeto para o construtor da classe `Scanner`.
+3. Use `hasNextLine()` para verificar se há mais linhas.
+4. Use `nextLine()` para ler cada linha.
+
+#### 🧾 Exemplo:
+
+```java
+File arquivo = new File("arquivo.json");
+Scanner scanner = new Scanner(arquivo);
+
+while (scanner.hasNextLine()) {
+    String linha = scanner.nextLine();
+    System.out.println(linha);
+}
+
+scanner.close();
+```
+
+* O código acima imprime o conteúdo do arquivo `arquivo.json` linha por linha.
+* O uso do `try-catch` trata a exceção `FileNotFoundException`.
+
+#### 💡 Outras Utilizações da Classe `Scanner`
+
+* Leitura de dados do **teclado** (`new Scanner(System.in)`).
+* Leitura de **strings** diretamente.
+* Suporte a **expressões regulares** para análise avançada de texto.
+
+---
+
+
+
+
 
