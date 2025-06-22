@@ -1067,4 +1067,48 @@ classDiagram
 
 ---
 
+### 📄 Manipulação de Arquivos em Java (`java.io`)
+
+#### 📁 Classe `File`
+
+A classe `File` oferece métodos para manipular arquivos e diretórios:
+
+* `exists()`, `canRead()`, `canWrite()`
+* `isDirectory()`, `isFile()`
+* `mkdir()`, `delete()`
+
+---
+
+#### 📝 Leitura e Escrita com `FileReader` e `FileWriter`
+
+* **`FileReader`**: lê caracteres de um arquivo de texto.
+
+  ```java
+  FileReader reader = new FileReader(new File("caminho.txt"));
+  int data = reader.read();
+  while (data != -1) {
+      System.out.print((char) data);
+      data = reader.read();
+  }
+  reader.close();
+  ```
+
+* **`FileWriter`**: escreve caracteres em um arquivo de texto.
+
+  ```java
+  FileWriter writer = new FileWriter(new File("saida.txt"));
+  writer.write("Olá, mundo!");
+  writer.close();
+  ```
+
+---
+
+#### 🔧 Outras Classes Úteis do pacote `java.io`
+
+* **`BufferedReader` e `BufferedWriter`**: leitura e escrita mais eficiente, usando buffer (linha por linha).
+* **`FileInputStream` e `FileOutputStream`**: usados para manipular arquivos **binários** (imagens, áudios).
+* **`ObjectInputStream` e `ObjectOutputStream`**: permitem **ler e gravar objetos Java** em arquivos (serialização).
+
+---
+
 
