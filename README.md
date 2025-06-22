@@ -994,3 +994,77 @@ Scanner sc = new Scanner(System.in);
         System.out.println(response.body());
 
 ```
+
+Claro! Aqui está um resumo em Markdown com um diagrama Mermaid explicando a hierarquia de classes de exceções em Java:
+
+---
+
+### 📚 Hierarquia de Exceções em Java
+
+No Java, as exceções são organizadas em uma **hierarquia de classes** que herdam da classe base `Throwable`. Abaixo dela, existem duas categorias principais:
+
+* `Exception`: representa **exceções verificadas (checked)**.
+* `Error`: representa **erros irrecuperáveis**.
+
+#### 🧩 Tipos de Exceções
+
+##### ✅ Checked Exceptions
+
+* Herdam de `Exception`.
+* Precisam ser **tratadas com `try-catch`** ou declaradas com `throws`.
+* Exemplo: `IOException`.
+
+##### ❌ Unchecked Exceptions
+
+* São **subclasses de `RuntimeException`**, que por sua vez herda de `Exception`.
+* Não precisam ser tratadas obrigatoriamente.
+* Exemplo: `NullPointerException`.
+
+##### 🚨 Errors
+
+* São subclasses de `Error`.
+* Representam falhas graves e normalmente **não devem ser tratadas**.
+* Exemplo: `OutOfMemoryError`.
+
+#### 🔄 Tratamento com Try-Catch
+
+* Blocos `catch` podem capturar exceções de subclasses se estiverem definidos para capturar a superclasse.
+* O inverso **não é permitido**.
+
+**Exemplo**:
+
+```java
+try {
+    // código que pode lançar IOException ou FileNotFoundException
+} catch (IOException e) {
+    // Captura ambos IOException e FileNotFoundException
+}
+```
+
+---
+
+#### 📊 Diagrama de Hierarquia
+
+```mermaid
+classDiagram
+    Throwable <|-- Exception
+    Throwable <|-- Error
+    Exception <|-- IOException
+    IOException <|-- FileNotFoundException
+    Exception <|-- RuntimeException
+    RuntimeException <|-- NullPointerException
+    Error <|-- OutOfMemoryError
+
+    class Throwable
+    class Exception
+    class Error
+    class IOException
+    class FileNotFoundException
+    class RuntimeException
+    class NullPointerException
+    class OutOfMemoryError
+```
+
+---
+
+
